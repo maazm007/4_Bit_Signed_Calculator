@@ -1,0 +1,13 @@
+MODULE Calculator
+	SUBMODULE Two_to_Four_Decoder
+		INSTANCE XLXI_52
+	SUBMODULE Multiplier_Calculator
+		INSTANCE XLXI_53
+	SUBMODULE Subtracter_Calculator
+		INSTANCE XLXI_60
+	SUBMODULE Adder_Calculator
+		INSTANCE XLXI_58
+	SUBMODULE Nine_Bit_OR
+		INSTANCE XLXI_64
+	SUBMODULE Divider_Calculator
+		INSTANCE XLXI_65

@@ -1,0 +1,50 @@
+////////////////////////////////////////////////////////////////////////////////
+// Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+////////////////////////////////////////////////////////////////////////////////
+//   ____  ____ 
+//  /   /\/   / 
+// /___/  \  /    Vendor: Xilinx 
+// \   \   \/     Version : 14.7
+//  \   \         Application : sch2hdl
+//  /   /         Filename : Half_Adder.vf
+// /___/   /\     Timestamp : 11/16/2022 18:02:59
+// \   \  /  \ 
+//  \___\/\___\ 
+//
+//Command: sch2hdl -intstyle ise -family spartan6 -verilog E:/Projects/Xilinx/DigitalDesign_3rd_Year/Half_Adder.vf -w E:/Projects/Xilinx/DigitalDesign_3rd_Year/Half_Adder.sch
+//Design Name: Half_Adder
+//Device: spartan6
+//Purpose:
+//    This verilog netlist is translated from an ECS schematic.It can be 
+//    synthesized and simulated, but it should not be modified. 
+//
+`timescale 1ns / 1ps
+
+module Half_Adder(A, 
+                  B, 
+                  RST, 
+                  CARRY, 
+                  SUM);
+
+    input A;
+    input B;
+    input RST;
+   output CARRY;
+   output SUM;
+   
+   wire XLXN_1;
+   wire XLXN_2;
+   
+   XOR2  XLXI_1 (.I0(B), 
+                .I1(A), 
+                .O(XLXN_1));
+   AND2  XLXI_3 (.I0(B), 
+                .I1(A), 
+                .O(XLXN_2));
+   AND2  XLXI_4 (.I0(RST), 
+                .I1(XLXN_1), 
+                .O(SUM));
+   AND2  XLXI_5 (.I0(RST), 
+                .I1(XLXN_2), 
+                .O(CARRY));
+endmodule

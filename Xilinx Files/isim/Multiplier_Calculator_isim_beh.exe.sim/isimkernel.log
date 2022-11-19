@@ -1,0 +1,29 @@
+Command line:
+   Multiplier_Calculator_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  51776
+
+Fri Nov 18 21:17:58 2022
+
+
+ Elaboration Time: 0.046875 sec
+
+ Current Memory Usage: 5153.98 Meg
+
+ Total Signals          : 1016
+ Total Nets             : 219
+ Total Signal Drivers   : 200
+ Total Blocks           : 242
+ Total Primitive Blocks : 196
+ Total Processes        : 201
+ Total Traceable Variables  : 18
+ Total Scalar Nets and Variables : 299
+Total Line Count : 17
+
+ Total Simulation Time: 0.0625 sec
+
+ Current Memory Usage: 4996.69 Meg
+
+Fri Nov 18 21:19:57 2022
+

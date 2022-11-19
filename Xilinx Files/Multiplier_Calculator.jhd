@@ -1,0 +1,7 @@
+MODULE Multiplier_Calculator
+	SUBMODULE Multiplier_4_Bit
+		INSTANCE XLXI_1
+	SUBMODULE Nine_Bit_Twos_Complement
+		INSTANCE XLXI_2
+	SUBMODULE Two_to_One_MUX_Nine_Bit
+		INSTANCE XLXI_3

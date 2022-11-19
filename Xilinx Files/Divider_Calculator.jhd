@@ -1,0 +1,19 @@
+MODULE Divider_Calculator
+	SUBMODULE Four_Bit_Divider
+		INSTANCE XLXI_1
+	SUBMODULE Adder_4_Bit
+		INSTANCE XLXI_2
+	SUBMODULE Eight_Bit_Twos_Complement
+		INSTANCE XLXI_12
+	SUBMODULE Eight_Bit_Twos_Complement
+		INSTANCE XLXI_5
+	SUBMODULE Subtracter_4_Bit
+		INSTANCE XLXI_8
+	SUBMODULE Two_One_MUX_Eight_Bit_All_Ports
+		INSTANCE XLXI_14
+	SUBMODULE Two_to_One_MUX_Eight_Bit
+		INSTANCE XLXI_17
+	SUBMODULE Two_to_One_MUX_Four_Bit
+		INSTANCE XLXI_16
+	SUBMODULE Two_to_One_MUX_Four_Bit
+		INSTANCE XLXI_19

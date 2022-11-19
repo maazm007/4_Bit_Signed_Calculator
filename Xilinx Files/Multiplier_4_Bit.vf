@@ -1,0 +1,275 @@
+////////////////////////////////////////////////////////////////////////////////
+// Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+////////////////////////////////////////////////////////////////////////////////
+//   ____  ____ 
+//  /   /\/   / 
+// /___/  \  /    Vendor: Xilinx 
+// \   \   \/     Version : 14.7
+//  \   \         Application : sch2hdl
+//  /   /         Filename : Multiplier_4_Bit.vf
+// /___/   /\     Timestamp : 11/16/2022 18:32:33
+// \   \  /  \ 
+//  \___\/\___\ 
+//
+//Command: sch2hdl -intstyle ise -family spartan6 -verilog E:/Projects/Xilinx/DigitalDesign_3rd_Year/Multiplier_4_Bit.vf -w E:/Projects/Xilinx/DigitalDesign_3rd_Year/Multiplier_4_Bit.sch
+//Design Name: Multiplier_4_Bit
+//Device: spartan6
+//Purpose:
+//    This verilog netlist is translated from an ECS schematic.It can be 
+//    synthesized and simulated, but it should not be modified. 
+//
+`timescale 1ns / 1ps
+
+module Half_Adder_MUSER_Multiplier_4_Bit(A, 
+                                         B, 
+                                         RST, 
+                                         CARRY, 
+                                         SUM);
+
+    input A;
+    input B;
+    input RST;
+   output CARRY;
+   output SUM;
+   
+   wire XLXN_1;
+   wire XLXN_2;
+   
+   XOR2  XLXI_1 (.I0(B), 
+                .I1(A), 
+                .O(XLXN_1));
+   AND2  XLXI_3 (.I0(B), 
+                .I1(A), 
+                .O(XLXN_2));
+   AND2  XLXI_4 (.I0(RST), 
+                .I1(XLXN_1), 
+                .O(SUM));
+   AND2  XLXI_5 (.I0(RST), 
+                .I1(XLXN_2), 
+                .O(CARRY));
+endmodule
+`timescale 1ns / 1ps
+
+module Full_Adder_MUSER_Multiplier_4_Bit(A, 
+                                         B, 
+                                         Cin, 
+                                         RST, 
+                                         CARRY, 
+                                         SUM);
+
+    input A;
+    input B;
+    input Cin;
+    input RST;
+   output CARRY;
+   output SUM;
+   
+   wire XLXN_1;
+   wire XLXN_2;
+   wire XLXN_3;
+   
+   Half_Adder_MUSER_Multiplier_4_Bit  XLXI_1 (.A(A), 
+                                             .B(B), 
+                                             .RST(RST), 
+                                             .CARRY(XLXN_3), 
+                                             .SUM(XLXN_1));
+   Half_Adder_MUSER_Multiplier_4_Bit  XLXI_2 (.A(XLXN_1), 
+                                             .B(Cin), 
+                                             .RST(RST), 
+                                             .CARRY(XLXN_2), 
+                                             .SUM(SUM));
+   OR2  XLXI_3 (.I0(XLXN_3), 
+               .I1(XLXN_2), 
+               .O(CARRY));
+endmodule
+`timescale 1ns / 1ps
+
+module Adder_4_Bit_MUSER_Multiplier_4_Bit(A0, 
+                                          A1, 
+                                          A2, 
+                                          A3, 
+                                          B0, 
+                                          B1, 
+                                          B2, 
+                                          B3, 
+                                          RST, 
+                                          SUM0, 
+                                          SUM1, 
+                                          SUM2, 
+                                          SUM3, 
+                                          SUM4);
+
+    input A0;
+    input A1;
+    input A2;
+    input A3;
+    input B0;
+    input B1;
+    input B2;
+    input B3;
+    input RST;
+   output SUM0;
+   output SUM1;
+   output SUM2;
+   output SUM3;
+   output SUM4;
+   
+   wire XLXN_3;
+   wire XLXN_4;
+   wire XLXN_6;
+   
+   Half_Adder_MUSER_Multiplier_4_Bit  XLXI_1 (.A(A0), 
+                                             .B(B0), 
+                                             .RST(RST), 
+                                             .CARRY(XLXN_6), 
+                                             .SUM(SUM0));
+   Full_Adder_MUSER_Multiplier_4_Bit  XLXI_2 (.A(A1), 
+                                             .B(B1), 
+                                             .Cin(XLXN_6), 
+                                             .RST(RST), 
+                                             .CARRY(XLXN_3), 
+                                             .SUM(SUM1));
+   Full_Adder_MUSER_Multiplier_4_Bit  XLXI_3 (.A(A2), 
+                                             .B(B2), 
+                                             .Cin(XLXN_3), 
+                                             .RST(RST), 
+                                             .CARRY(XLXN_4), 
+                                             .SUM(SUM2));
+   Full_Adder_MUSER_Multiplier_4_Bit  XLXI_4 (.A(A3), 
+                                             .B(B3), 
+                                             .Cin(XLXN_4), 
+                                             .RST(RST), 
+                                             .CARRY(SUM4), 
+                                             .SUM(SUM3));
+endmodule
+`timescale 1ns / 1ps
+
+module Multiplier_4_Bit(A, 
+                        B, 
+                        RESET, 
+                        MUL);
+
+    input [3:0] A;
+    input [3:0] B;
+    input RESET;
+   output [8:0] MUL;
+   
+   wire XLXN_21;
+   wire XLXN_22;
+   wire XLXN_23;
+   wire XLXN_24;
+   wire XLXN_25;
+   wire XLXN_30;
+   wire XLXN_31;
+   wire XLXN_39;
+   wire XLXN_40;
+   wire XLXN_41;
+   wire XLXN_43;
+   wire XLXN_44;
+   wire XLXN_45;
+   wire XLXN_46;
+   wire XLXN_50;
+   wire XLXN_51;
+   wire XLXN_52;
+   wire XLXN_53;
+   wire XLXN_54;
+   wire XLXN_55;
+   wire XLXN_56;
+   wire XLXN_57;
+   wire XLXN_67;
+   wire XLXN_71;
+   
+   Adder_4_Bit_MUSER_Multiplier_4_Bit  XLXI_1 (.A0(XLXN_21), 
+                                              .A1(XLXN_22), 
+                                              .A2(XLXN_23), 
+                                              .A3(XLXN_71), 
+                                              .B0(XLXN_24), 
+                                              .B1(XLXN_25), 
+                                              .B2(XLXN_30), 
+                                              .B3(XLXN_31), 
+                                              .RST(RESET), 
+                                              .SUM0(MUL[1]), 
+                                              .SUM1(XLXN_39), 
+                                              .SUM2(XLXN_40), 
+                                              .SUM3(XLXN_41), 
+                                              .SUM4(XLXN_43));
+   AND2  XLXI_3 (.I0(B[0]), 
+                .I1(A[1]), 
+                .O(XLXN_21));
+   AND2  XLXI_4 (.I0(B[0]), 
+                .I1(A[2]), 
+                .O(XLXN_22));
+   AND2  XLXI_5 (.I0(B[0]), 
+                .I1(A[3]), 
+                .O(XLXN_23));
+   AND2  XLXI_6 (.I0(B[1]), 
+                .I1(A[0]), 
+                .O(XLXN_24));
+   AND2  XLXI_7 (.I0(B[1]), 
+                .I1(A[1]), 
+                .O(XLXN_25));
+   AND2  XLXI_8 (.I0(B[1]), 
+                .I1(A[2]), 
+                .O(XLXN_30));
+   AND2  XLXI_9 (.I0(B[1]), 
+                .I1(A[3]), 
+                .O(XLXN_31));
+   AND2  XLXI_18 (.I0(B[2]), 
+                 .I1(A[0]), 
+                 .O(XLXN_44));
+   AND2  XLXI_19 (.I0(B[2]), 
+                 .I1(A[1]), 
+                 .O(XLXN_45));
+   AND2  XLXI_20 (.I0(B[2]), 
+                 .I1(A[2]), 
+                 .O(XLXN_46));
+   AND2  XLXI_21 (.I0(B[2]), 
+                 .I1(A[3]), 
+                 .O(XLXN_67));
+   Adder_4_Bit_MUSER_Multiplier_4_Bit  XLXI_30 (.A0(XLXN_39), 
+                                               .A1(XLXN_40), 
+                                               .A2(XLXN_41), 
+                                               .A3(XLXN_43), 
+                                               .B0(XLXN_44), 
+                                               .B1(XLXN_45), 
+                                               .B2(XLXN_46), 
+                                               .B3(XLXN_67), 
+                                               .RST(RESET), 
+                                               .SUM0(MUL[2]), 
+                                               .SUM1(XLXN_54), 
+                                               .SUM2(XLXN_55), 
+                                               .SUM3(XLXN_56), 
+                                               .SUM4(XLXN_57));
+   AND2  XLXI_32 (.I0(B[3]), 
+                 .I1(A[2]), 
+                 .O(XLXN_52));
+   AND2  XLXI_33 (.I0(B[3]), 
+                 .I1(A[1]), 
+                 .O(XLXN_51));
+   AND2  XLXI_34 (.I0(B[3]), 
+                 .I1(A[0]), 
+                 .O(XLXN_50));
+   AND2  XLXI_35 (.I0(B[3]), 
+                 .I1(A[3]), 
+                 .O(XLXN_53));
+   Adder_4_Bit_MUSER_Multiplier_4_Bit  XLXI_40 (.A0(XLXN_54), 
+                                               .A1(XLXN_55), 
+                                               .A2(XLXN_56), 
+                                               .A3(XLXN_57), 
+                                               .B0(XLXN_50), 
+                                               .B1(XLXN_51), 
+                                               .B2(XLXN_52), 
+                                               .B3(XLXN_53), 
+                                               .RST(RESET), 
+                                               .SUM0(MUL[3]), 
+                                               .SUM1(MUL[4]), 
+                                               .SUM2(MUL[5]), 
+                                               .SUM3(MUL[6]), 
+                                               .SUM4(MUL[7]));
+   GND  XLXI_42 (.G(XLXN_71));
+   AND3  XLXI_44 (.I0(A[0]), 
+                 .I1(RESET), 
+                 .I2(B[0]), 
+                 .O(MUL[0]));
+   GND  XLXI_46 (.G(MUL[8]));
+endmodule

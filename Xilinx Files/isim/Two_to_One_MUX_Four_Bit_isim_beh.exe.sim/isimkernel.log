@@ -1,0 +1,29 @@
+Command line:
+   Two_to_One_MUX_Four_Bit_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  58850
+
+Thu Nov 17 22:37:41 2022
+
+
+ Elaboration Time: 0.015625 sec
+
+ Current Memory Usage: 5150.34 Meg
+
+ Total Signals          : 81
+ Total Nets             : 40
+ Total Signal Drivers   : 22
+ Total Blocks           : 19
+ Total Primitive Blocks : 18
+ Total Processes        : 23
+ Total Traceable Variables  : 18
+ Total Scalar Nets and Variables : 120
+Total Line Count : 14
+
+ Total Simulation Time: 0.03125 sec
+
+ Current Memory Usage: 5150.34 Meg
+
+Thu Nov 17 22:37:44 2022
+

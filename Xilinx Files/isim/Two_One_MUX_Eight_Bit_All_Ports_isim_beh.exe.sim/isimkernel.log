@@ -1,0 +1,28 @@
+Command line:
+   Two_One_MUX_Eight_Bit_All_Ports_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  50134
+
+Fri Nov 18 18:36:45 2022
+
+
+ Elaboration Time: 0.015625 sec
+
+ Current Memory Usage: 5150.35 Meg
+
+ Total Signals          : 141
+ Total Nets             : 64
+ Total Signal Drivers   : 38
+ Total Blocks           : 35
+ Total Primitive Blocks : 34
+ Total Processes        : 39
+ Total Traceable Variables  : 18
+ Total Scalar Nets and Variables : 144
+
+ Total Simulation Time: 0.078125 sec
+
+ Current Memory Usage: 5150.35 Meg
+
+Fri Nov 18 18:36:48 2022
+

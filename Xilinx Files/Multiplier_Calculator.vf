@@ -1,0 +1,563 @@
+////////////////////////////////////////////////////////////////////////////////
+// Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+////////////////////////////////////////////////////////////////////////////////
+//   ____  ____ 
+//  /   /\/   / 
+// /___/  \  /    Vendor: Xilinx 
+// \   \   \/     Version : 14.7
+//  \   \         Application : sch2hdl
+//  /   /         Filename : Multiplier_Calculator.vf
+// /___/   /\     Timestamp : 11/16/2022 18:32:30
+// \   \  /  \ 
+//  \___\/\___\ 
+//
+//Command: sch2hdl -intstyle ise -family spartan6 -verilog E:/Projects/Xilinx/DigitalDesign_3rd_Year/Multiplier_Calculator.vf -w E:/Projects/Xilinx/DigitalDesign_3rd_Year/Multiplier_Calculator.sch
+//Design Name: Multiplier_Calculator
+//Device: spartan6
+//Purpose:
+//    This verilog netlist is translated from an ECS schematic.It can be 
+//    synthesized and simulated, but it should not be modified. 
+//
+`timescale 1ns / 1ps
+
+module Two_to_One_MUX_Nine_Bit_MUSER_Multiplier_Calculator(A, 
+                                                           B, 
+                                                           RESET, 
+                                                           SEL, 
+                                                           OUTPUT);
+
+    input [8:0] A;
+    input [8:0] B;
+    input RESET;
+    input SEL;
+   output [8:0] OUTPUT;
+   
+   wire XLXN_22;
+   wire XLXN_26;
+   wire XLXN_27;
+   wire XLXN_28;
+   wire XLXN_30;
+   wire XLXN_31;
+   wire XLXN_32;
+   wire XLXN_33;
+   wire XLXN_34;
+   wire XLXN_36;
+   wire XLXN_37;
+   wire XLXN_38;
+   wire XLXN_39;
+   wire XLXN_40;
+   wire XLXN_41;
+   wire XLXN_42;
+   wire XLXN_43;
+   wire XLXN_44;
+   wire XLXN_45;
+   wire XLXN_46;
+   wire XLXN_47;
+   wire XLXN_48;
+   wire XLXN_49;
+   wire XLXN_50;
+   wire XLXN_51;
+   wire XLXN_52;
+   wire XLXN_54;
+   wire XLXN_55;
+   
+   AND2  XLXI_1 (.I0(XLXN_22), 
+                .I1(A[0]), 
+                .O(XLXN_26));
+   AND2  XLXI_2 (.I0(SEL), 
+                .I1(B[0]), 
+                .O(XLXN_27));
+   AND2  XLXI_3 (.I0(XLXN_22), 
+                .I1(A[1]), 
+                .O(XLXN_28));
+   AND2  XLXI_4 (.I0(SEL), 
+                .I1(B[1]), 
+                .O(XLXN_30));
+   AND2  XLXI_5 (.I0(XLXN_22), 
+                .I1(A[2]), 
+                .O(XLXN_31));
+   AND2  XLXI_6 (.I0(SEL), 
+                .I1(B[2]), 
+                .O(XLXN_32));
+   AND2  XLXI_7 (.I0(XLXN_22), 
+                .I1(A[3]), 
+                .O(XLXN_33));
+   AND2  XLXI_8 (.I0(SEL), 
+                .I1(B[3]), 
+                .O(XLXN_34));
+   AND2  XLXI_9 (.I0(XLXN_22), 
+                .I1(A[4]), 
+                .O(XLXN_36));
+   AND2  XLXI_10 (.I0(SEL), 
+                 .I1(B[4]), 
+                 .O(XLXN_37));
+   AND2  XLXI_11 (.I0(XLXN_22), 
+                 .I1(A[5]), 
+                 .O(XLXN_38));
+   AND2  XLXI_12 (.I0(SEL), 
+                 .I1(B[5]), 
+                 .O(XLXN_39));
+   AND2  XLXI_13 (.I0(XLXN_22), 
+                 .I1(A[6]), 
+                 .O(XLXN_42));
+   AND2  XLXI_14 (.I0(SEL), 
+                 .I1(B[6]), 
+                 .O(XLXN_43));
+   AND2  XLXI_15 (.I0(XLXN_22), 
+                 .I1(A[7]), 
+                 .O(XLXN_40));
+   AND2  XLXI_16 (.I0(SEL), 
+                 .I1(B[7]), 
+                 .O(XLXN_41));
+   AND2  XLXI_17 (.I0(XLXN_22), 
+                 .I1(A[8]), 
+                 .O(XLXN_44));
+   AND2  XLXI_18 (.I0(SEL), 
+                 .I1(B[8]), 
+                 .O(XLXN_45));
+   INV  XLXI_19 (.I(SEL), 
+                .O(XLXN_22));
+   OR2  XLXI_20 (.I0(XLXN_27), 
+                .I1(XLXN_26), 
+                .O(XLXN_46));
+   OR2  XLXI_21 (.I0(XLXN_30), 
+                .I1(XLXN_28), 
+                .O(XLXN_47));
+   OR2  XLXI_22 (.I0(XLXN_32), 
+                .I1(XLXN_31), 
+                .O(XLXN_48));
+   OR2  XLXI_23 (.I0(XLXN_34), 
+                .I1(XLXN_33), 
+                .O(XLXN_49));
+   OR2  XLXI_24 (.I0(XLXN_37), 
+                .I1(XLXN_36), 
+                .O(XLXN_50));
+   OR2  XLXI_25 (.I0(XLXN_39), 
+                .I1(XLXN_38), 
+                .O(XLXN_51));
+   OR2  XLXI_26 (.I0(XLXN_43), 
+                .I1(XLXN_42), 
+                .O(XLXN_52));
+   OR2  XLXI_27 (.I0(XLXN_41), 
+                .I1(XLXN_40), 
+                .O(XLXN_54));
+   OR2  XLXI_28 (.I0(XLXN_45), 
+                .I1(XLXN_44), 
+                .O(XLXN_55));
+   AND2  XLXI_29 (.I0(RESET), 
+                 .I1(XLXN_46), 
+                 .O(OUTPUT[0]));
+   AND2  XLXI_30 (.I0(RESET), 
+                 .I1(XLXN_47), 
+                 .O(OUTPUT[1]));
+   AND2  XLXI_31 (.I0(RESET), 
+                 .I1(XLXN_48), 
+                 .O(OUTPUT[2]));
+   AND2  XLXI_32 (.I0(RESET), 
+                 .I1(XLXN_49), 
+                 .O(OUTPUT[3]));
+   AND2  XLXI_33 (.I0(RESET), 
+                 .I1(XLXN_50), 
+                 .O(OUTPUT[4]));
+   AND2  XLXI_34 (.I0(RESET), 
+                 .I1(XLXN_51), 
+                 .O(OUTPUT[5]));
+   AND2  XLXI_35 (.I0(RESET), 
+                 .I1(XLXN_52), 
+                 .O(OUTPUT[6]));
+   AND2  XLXI_36 (.I0(RESET), 
+                 .I1(XLXN_54), 
+                 .O(OUTPUT[7]));
+   AND2  XLXI_37 (.I0(RESET), 
+                 .I1(XLXN_55), 
+                 .O(OUTPUT[8]));
+endmodule
+`timescale 1ns / 1ps
+
+module Half_Adder_MUSER_Multiplier_Calculator(A, 
+                                              B, 
+                                              RST, 
+                                              CARRY, 
+                                              SUM);
+
+    input A;
+    input B;
+    input RST;
+   output CARRY;
+   output SUM;
+   
+   wire XLXN_1;
+   wire XLXN_2;
+   
+   XOR2  XLXI_1 (.I0(B), 
+                .I1(A), 
+                .O(XLXN_1));
+   AND2  XLXI_3 (.I0(B), 
+                .I1(A), 
+                .O(XLXN_2));
+   AND2  XLXI_4 (.I0(RST), 
+                .I1(XLXN_1), 
+                .O(SUM));
+   AND2  XLXI_5 (.I0(RST), 
+                .I1(XLXN_2), 
+                .O(CARRY));
+endmodule
+`timescale 1ns / 1ps
+
+module Nine_Bit_Twos_Complement_MUSER_Multiplier_Calculator(A, 
+                                                            RESET, 
+                                                            OUTPUT);
+
+    input [8:0] A;
+    input RESET;
+   output [8:0] OUTPUT;
+   
+   wire XLXN_1;
+   wire XLXN_2;
+   wire XLXN_3;
+   wire XLXN_4;
+   wire XLXN_5;
+   wire XLXN_8;
+   wire XLXN_9;
+   wire XLXN_10;
+   wire XLXN_11;
+   wire XLXN_13;
+   wire XLXN_28;
+   wire XLXN_32;
+   wire XLXN_47;
+   wire XLXN_56;
+   wire XLXN_57;
+   wire XLXN_58;
+   wire XLXN_59;
+   wire XLXN_60;
+   
+   Half_Adder_MUSER_Multiplier_Calculator  XLXI_1 (.A(XLXN_2), 
+                                                  .B(XLXN_1), 
+                                                  .RST(RESET), 
+                                                  .CARRY(XLXN_8), 
+                                                  .SUM(OUTPUT[0]));
+   Half_Adder_MUSER_Multiplier_Calculator  XLXI_2 (.A(XLXN_3), 
+                                                  .B(XLXN_8), 
+                                                  .RST(RESET), 
+                                                  .CARRY(XLXN_9), 
+                                                  .SUM(OUTPUT[1]));
+   Half_Adder_MUSER_Multiplier_Calculator  XLXI_3 (.A(XLXN_4), 
+                                                  .B(XLXN_9), 
+                                                  .RST(RESET), 
+                                                  .CARRY(XLXN_10), 
+                                                  .SUM(OUTPUT[2]));
+   Half_Adder_MUSER_Multiplier_Calculator  XLXI_4 (.A(XLXN_5), 
+                                                  .B(XLXN_10), 
+                                                  .RST(RESET), 
+                                                  .CARRY(XLXN_11), 
+                                                  .SUM(OUTPUT[3]));
+   Half_Adder_MUSER_Multiplier_Calculator  XLXI_5 (.A(XLXN_60), 
+                                                  .B(XLXN_11), 
+                                                  .RST(RESET), 
+                                                  .CARRY(XLXN_28), 
+                                                  .SUM(OUTPUT[4]));
+   Half_Adder_MUSER_Multiplier_Calculator  XLXI_6 (.A(XLXN_59), 
+                                                  .B(XLXN_28), 
+                                                  .RST(RESET), 
+                                                  .CARRY(XLXN_13), 
+                                                  .SUM(OUTPUT[5]));
+   Half_Adder_MUSER_Multiplier_Calculator  XLXI_7 (.A(XLXN_58), 
+                                                  .B(XLXN_13), 
+                                                  .RST(RESET), 
+                                                  .CARRY(XLXN_32), 
+                                                  .SUM(OUTPUT[6]));
+   Half_Adder_MUSER_Multiplier_Calculator  XLXI_8 (.A(XLXN_57), 
+                                                  .B(XLXN_32), 
+                                                  .RST(RESET), 
+                                                  .CARRY(XLXN_47), 
+                                                  .SUM(OUTPUT[7]));
+   VCC  XLXI_9 (.P(XLXN_1));
+   INV  XLXI_10 (.I(A[0]), 
+                .O(XLXN_2));
+   INV  XLXI_11 (.I(A[1]), 
+                .O(XLXN_3));
+   INV  XLXI_12 (.I(A[2]), 
+                .O(XLXN_4));
+   INV  XLXI_13 (.I(A[3]), 
+                .O(XLXN_5));
+   Half_Adder_MUSER_Multiplier_Calculator  XLXI_24 (.A(XLXN_56), 
+                                                   .B(XLXN_47), 
+                                                   .RST(RESET), 
+                                                   .CARRY(), 
+                                                   .SUM(OUTPUT[8]));
+   INV  XLXI_25 (.I(A[4]), 
+                .O(XLXN_60));
+   INV  XLXI_26 (.I(A[5]), 
+                .O(XLXN_59));
+   INV  XLXI_27 (.I(A[6]), 
+                .O(XLXN_58));
+   INV  XLXI_28 (.I(A[7]), 
+                .O(XLXN_57));
+   INV  XLXI_29 (.I(A[8]), 
+                .O(XLXN_56));
+endmodule
+`timescale 1ns / 1ps
+
+module Full_Adder_MUSER_Multiplier_Calculator(A, 
+                                              B, 
+                                              Cin, 
+                                              RST, 
+                                              CARRY, 
+                                              SUM);
+
+    input A;
+    input B;
+    input Cin;
+    input RST;
+   output CARRY;
+   output SUM;
+   
+   wire XLXN_1;
+   wire XLXN_2;
+   wire XLXN_3;
+   
+   Half_Adder_MUSER_Multiplier_Calculator  XLXI_1 (.A(A), 
+                                                  .B(B), 
+                                                  .RST(RST), 
+                                                  .CARRY(XLXN_3), 
+                                                  .SUM(XLXN_1));
+   Half_Adder_MUSER_Multiplier_Calculator  XLXI_2 (.A(XLXN_1), 
+                                                  .B(Cin), 
+                                                  .RST(RST), 
+                                                  .CARRY(XLXN_2), 
+                                                  .SUM(SUM));
+   OR2  XLXI_3 (.I0(XLXN_3), 
+               .I1(XLXN_2), 
+               .O(CARRY));
+endmodule
+`timescale 1ns / 1ps
+
+module Adder_4_Bit_MUSER_Multiplier_Calculator(A0, 
+                                               A1, 
+                                               A2, 
+                                               A3, 
+                                               B0, 
+                                               B1, 
+                                               B2, 
+                                               B3, 
+                                               RST, 
+                                               SUM0, 
+                                               SUM1, 
+                                               SUM2, 
+                                               SUM3, 
+                                               SUM4);
+
+    input A0;
+    input A1;
+    input A2;
+    input A3;
+    input B0;
+    input B1;
+    input B2;
+    input B3;
+    input RST;
+   output SUM0;
+   output SUM1;
+   output SUM2;
+   output SUM3;
+   output SUM4;
+   
+   wire XLXN_3;
+   wire XLXN_4;
+   wire XLXN_6;
+   
+   Half_Adder_MUSER_Multiplier_Calculator  XLXI_1 (.A(A0), 
+                                                  .B(B0), 
+                                                  .RST(RST), 
+                                                  .CARRY(XLXN_6), 
+                                                  .SUM(SUM0));
+   Full_Adder_MUSER_Multiplier_Calculator  XLXI_2 (.A(A1), 
+                                                  .B(B1), 
+                                                  .Cin(XLXN_6), 
+                                                  .RST(RST), 
+                                                  .CARRY(XLXN_3), 
+                                                  .SUM(SUM1));
+   Full_Adder_MUSER_Multiplier_Calculator  XLXI_3 (.A(A2), 
+                                                  .B(B2), 
+                                                  .Cin(XLXN_3), 
+                                                  .RST(RST), 
+                                                  .CARRY(XLXN_4), 
+                                                  .SUM(SUM2));
+   Full_Adder_MUSER_Multiplier_Calculator  XLXI_4 (.A(A3), 
+                                                  .B(B3), 
+                                                  .Cin(XLXN_4), 
+                                                  .RST(RST), 
+                                                  .CARRY(SUM4), 
+                                                  .SUM(SUM3));
+endmodule
+`timescale 1ns / 1ps
+
+module Multiplier_4_Bit_MUSER_Multiplier_Calculator(A, 
+                                                    B, 
+                                                    RESET, 
+                                                    MUL);
+
+    input [3:0] A;
+    input [3:0] B;
+    input RESET;
+   output [8:0] MUL;
+   
+   wire XLXN_21;
+   wire XLXN_22;
+   wire XLXN_23;
+   wire XLXN_24;
+   wire XLXN_25;
+   wire XLXN_30;
+   wire XLXN_31;
+   wire XLXN_39;
+   wire XLXN_40;
+   wire XLXN_41;
+   wire XLXN_43;
+   wire XLXN_44;
+   wire XLXN_45;
+   wire XLXN_46;
+   wire XLXN_50;
+   wire XLXN_51;
+   wire XLXN_52;
+   wire XLXN_53;
+   wire XLXN_54;
+   wire XLXN_55;
+   wire XLXN_56;
+   wire XLXN_57;
+   wire XLXN_67;
+   wire XLXN_71;
+   
+   Adder_4_Bit_MUSER_Multiplier_Calculator  XLXI_1 (.A0(XLXN_21), 
+                                                   .A1(XLXN_22), 
+                                                   .A2(XLXN_23), 
+                                                   .A3(XLXN_71), 
+                                                   .B0(XLXN_24), 
+                                                   .B1(XLXN_25), 
+                                                   .B2(XLXN_30), 
+                                                   .B3(XLXN_31), 
+                                                   .RST(RESET), 
+                                                   .SUM0(MUL[1]), 
+                                                   .SUM1(XLXN_39), 
+                                                   .SUM2(XLXN_40), 
+                                                   .SUM3(XLXN_41), 
+                                                   .SUM4(XLXN_43));
+   AND2  XLXI_3 (.I0(B[0]), 
+                .I1(A[1]), 
+                .O(XLXN_21));
+   AND2  XLXI_4 (.I0(B[0]), 
+                .I1(A[2]), 
+                .O(XLXN_22));
+   AND2  XLXI_5 (.I0(B[0]), 
+                .I1(A[3]), 
+                .O(XLXN_23));
+   AND2  XLXI_6 (.I0(B[1]), 
+                .I1(A[0]), 
+                .O(XLXN_24));
+   AND2  XLXI_7 (.I0(B[1]), 
+                .I1(A[1]), 
+                .O(XLXN_25));
+   AND2  XLXI_8 (.I0(B[1]), 
+                .I1(A[2]), 
+                .O(XLXN_30));
+   AND2  XLXI_9 (.I0(B[1]), 
+                .I1(A[3]), 
+                .O(XLXN_31));
+   AND2  XLXI_18 (.I0(B[2]), 
+                 .I1(A[0]), 
+                 .O(XLXN_44));
+   AND2  XLXI_19 (.I0(B[2]), 
+                 .I1(A[1]), 
+                 .O(XLXN_45));
+   AND2  XLXI_20 (.I0(B[2]), 
+                 .I1(A[2]), 
+                 .O(XLXN_46));
+   AND2  XLXI_21 (.I0(B[2]), 
+                 .I1(A[3]), 
+                 .O(XLXN_67));
+   Adder_4_Bit_MUSER_Multiplier_Calculator  XLXI_30 (.A0(XLXN_39), 
+                                                    .A1(XLXN_40), 
+                                                    .A2(XLXN_41), 
+                                                    .A3(XLXN_43), 
+                                                    .B0(XLXN_44), 
+                                                    .B1(XLXN_45), 
+                                                    .B2(XLXN_46), 
+                                                    .B3(XLXN_67), 
+                                                    .RST(RESET), 
+                                                    .SUM0(MUL[2]), 
+                                                    .SUM1(XLXN_54), 
+                                                    .SUM2(XLXN_55), 
+                                                    .SUM3(XLXN_56), 
+                                                    .SUM4(XLXN_57));
+   AND2  XLXI_32 (.I0(B[3]), 
+                 .I1(A[2]), 
+                 .O(XLXN_52));
+   AND2  XLXI_33 (.I0(B[3]), 
+                 .I1(A[1]), 
+                 .O(XLXN_51));
+   AND2  XLXI_34 (.I0(B[3]), 
+                 .I1(A[0]), 
+                 .O(XLXN_50));
+   AND2  XLXI_35 (.I0(B[3]), 
+                 .I1(A[3]), 
+                 .O(XLXN_53));
+   Adder_4_Bit_MUSER_Multiplier_Calculator  XLXI_40 (.A0(XLXN_54), 
+                                                    .A1(XLXN_55), 
+                                                    .A2(XLXN_56), 
+                                                    .A3(XLXN_57), 
+                                                    .B0(XLXN_50), 
+                                                    .B1(XLXN_51), 
+                                                    .B2(XLXN_52), 
+                                                    .B3(XLXN_53), 
+                                                    .RST(RESET), 
+                                                    .SUM0(MUL[3]), 
+                                                    .SUM1(MUL[4]), 
+                                                    .SUM2(MUL[5]), 
+                                                    .SUM3(MUL[6]), 
+                                                    .SUM4(MUL[7]));
+   GND  XLXI_42 (.G(XLXN_71));
+   AND3  XLXI_44 (.I0(A[0]), 
+                 .I1(RESET), 
+                 .I2(B[0]), 
+                 .O(MUL[0]));
+   GND  XLXI_46 (.G(MUL[8]));
+endmodule
+`timescale 1ns / 1ps
+
+module Multiplier_Calculator(A, 
+                             B, 
+                             RESET, 
+                             S0, 
+                             S1, 
+                             MUL);
+
+    input [3:0] A;
+    input [3:0] B;
+    input RESET;
+    input S0;
+    input S1;
+   output [8:0] MUL;
+   
+   wire [8:0] XLXN_3;
+   wire [8:0] XLXN_4;
+   wire XLXN_6;
+   
+   Multiplier_4_Bit_MUSER_Multiplier_Calculator  XLXI_1 (.A(A[3:0]), 
+                                                        .B(B[3:0]), 
+                                                        .RESET(RESET), 
+                                                        .MUL(XLXN_3[8:0]));
+   Nine_Bit_Twos_Complement_MUSER_Multiplier_Calculator  XLXI_2 
+         (.A(XLXN_3[8:0]), 
+                                                                .RESET(RESET), 
+                                                                
+         .OUTPUT(XLXN_4[8:0]));
+   Two_to_One_MUX_Nine_Bit_MUSER_Multiplier_Calculator  XLXI_3 
+         (.A(XLXN_3[8:0]), 
+                                                               .B(XLXN_4[8:0]), 
+                                                               .RESET(RESET), 
+                                                               .SEL(XLXN_6), 
+                                                               
+         .OUTPUT(MUL[8:0]));
+   XOR2  XLXI_4 (.I0(S1), 
+                .I1(S0), 
+                .O(XLXN_6));
+endmodule

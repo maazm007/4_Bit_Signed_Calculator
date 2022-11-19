@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -lib "secureip" -o "E:/Projects/Xilinx/DigitalDesign_3rd_Year/Calculator_isim_beh.exe" -prj "E:/Projects/Xilinx/DigitalDesign_3rd_Year/Calculator_beh.prj" "work.Calculator" "work.glbl" 

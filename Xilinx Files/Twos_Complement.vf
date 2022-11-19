@@ -1,0 +1,111 @@
+////////////////////////////////////////////////////////////////////////////////
+// Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+////////////////////////////////////////////////////////////////////////////////
+//   ____  ____ 
+//  /   /\/   / 
+// /___/  \  /    Vendor: Xilinx 
+// \   \   \/     Version : 14.7
+//  \   \         Application : sch2hdl
+//  /   /         Filename : Twos_Complement.vf
+// /___/   /\     Timestamp : 11/16/2022 18:02:58
+// \   \  /  \ 
+//  \___\/\___\ 
+//
+//Command: sch2hdl -intstyle ise -family spartan6 -verilog E:/Projects/Xilinx/DigitalDesign_3rd_Year/Twos_Complement.vf -w E:/Projects/Xilinx/DigitalDesign_3rd_Year/Twos_Complement.sch
+//Design Name: Twos_Complement
+//Device: spartan6
+//Purpose:
+//    This verilog netlist is translated from an ECS schematic.It can be 
+//    synthesized and simulated, but it should not be modified. 
+//
+`timescale 1ns / 1ps
+
+module Half_Adder_MUSER_Twos_Complement(A, 
+                                        B, 
+                                        RST, 
+                                        CARRY, 
+                                        SUM);
+
+    input A;
+    input B;
+    input RST;
+   output CARRY;
+   output SUM;
+   
+   wire XLXN_1;
+   wire XLXN_2;
+   
+   XOR2  XLXI_1 (.I0(B), 
+                .I1(A), 
+                .O(XLXN_1));
+   AND2  XLXI_3 (.I0(B), 
+                .I1(A), 
+                .O(XLXN_2));
+   AND2  XLXI_4 (.I0(RST), 
+                .I1(XLXN_1), 
+                .O(SUM));
+   AND2  XLXI_5 (.I0(RST), 
+                .I1(XLXN_2), 
+                .O(CARRY));
+endmodule
+`timescale 1ns / 1ps
+
+module Twos_Complement(A0, 
+                       A1, 
+                       A2, 
+                       A3, 
+                       RST, 
+                       C_OUT_1, 
+                       C_OUT_2, 
+                       C_OUT_3, 
+                       C_OUT_4);
+
+    input A0;
+    input A1;
+    input A2;
+    input A3;
+    input RST;
+   output C_OUT_1;
+   output C_OUT_2;
+   output C_OUT_3;
+   output C_OUT_4;
+   
+   wire XLXN_12;
+   wire XLXN_13;
+   wire XLXN_14;
+   wire XLXN_15;
+   wire XLXN_23;
+   wire XLXN_24;
+   wire XLXN_25;
+   wire XLXN_30;
+   
+   Half_Adder_MUSER_Twos_Complement  XLXI_1 (.A(XLXN_12), 
+                                            .B(XLXN_25), 
+                                            .RST(RST), 
+                                            .CARRY(), 
+                                            .SUM(C_OUT_4));
+   Half_Adder_MUSER_Twos_Complement  XLXI_2 (.A(XLXN_13), 
+                                            .B(XLXN_24), 
+                                            .RST(RST), 
+                                            .CARRY(XLXN_25), 
+                                            .SUM(C_OUT_3));
+   Half_Adder_MUSER_Twos_Complement  XLXI_3 (.A(XLXN_14), 
+                                            .B(XLXN_23), 
+                                            .RST(RST), 
+                                            .CARRY(XLXN_24), 
+                                            .SUM(C_OUT_2));
+   Half_Adder_MUSER_Twos_Complement  XLXI_4 (.A(XLXN_15), 
+                                            .B(XLXN_30), 
+                                            .RST(RST), 
+                                            .CARRY(XLXN_23), 
+                                            .SUM(C_OUT_1));
+   INV  XLXI_17 (.I(A3), 
+                .O(XLXN_12));
+   INV  XLXI_18 (.I(A2), 
+                .O(XLXN_13));
+   INV  XLXI_19 (.I(A1), 
+                .O(XLXN_14));
+   INV  XLXI_20 (.I(A0), 
+                .O(XLXN_15));
+   VCC  XLXI_22 (.P(XLXN_30));
+endmodule

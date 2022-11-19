@@ -1,0 +1,61 @@
+////////////////////////////////////////////////////////////////////////////////
+// Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+////////////////////////////////////////////////////////////////////////////////
+//   ____  ____ 
+//  /   /\/   / 
+// /___/  \  /    Vendor: Xilinx 
+// \   \   \/     Version : 14.7
+//  \   \         Application : sch2hdl
+//  /   /         Filename : HS.vf
+// /___/   /\     Timestamp : 11/16/2022 18:32:31
+// \   \  /  \ 
+//  \___\/\___\ 
+//
+//Command: sch2hdl -intstyle ise -family spartan6 -verilog E:/Projects/Xilinx/DigitalDesign_3rd_Year/HS.vf -w E:/Projects/Xilinx/DigitalDesign_3rd_Year/HS.sch
+//Design Name: HS
+//Device: spartan6
+//Purpose:
+//    This verilog netlist is translated from an ECS schematic.It can be 
+//    synthesized and simulated, but it should not be modified. 
+//
+`timescale 1ns / 1ps
+
+module HS(A, 
+          B, 
+          RESET, 
+          BORROW, 
+          DIFFERENCE);
+
+    input A;
+    input B;
+    input RESET;
+   output BORROW;
+   output DIFFERENCE;
+   
+   wire XLXN_1;
+   wire XLXN_2;
+   wire XLXN_5;
+   wire XLXN_7;
+   wire XLXN_10;
+   
+   XOR2  XLXI_1 (.I0(XLXN_5), 
+                .I1(XLXN_7), 
+                .O(XLXN_1));
+   AND2  XLXI_2 (.I0(XLXN_5), 
+                .I1(XLXN_10), 
+                .O(XLXN_2));
+   AND2  XLXI_3 (.I0(XLXN_1), 
+                .I1(RESET), 
+                .O(DIFFERENCE));
+   AND2  XLXI_4 (.I0(XLXN_2), 
+                .I1(RESET), 
+                .O(BORROW));
+   AND2  XLXI_6 (.I0(B), 
+                .I1(RESET), 
+                .O(XLXN_5));
+   AND2  XLXI_8 (.I0(A), 
+                .I1(RESET), 
+                .O(XLXN_7));
+   INV  XLXI_9 (.I(XLXN_7), 
+               .O(XLXN_10));
+endmodule

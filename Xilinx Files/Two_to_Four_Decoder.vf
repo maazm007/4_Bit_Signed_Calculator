@@ -1,0 +1,68 @@
+////////////////////////////////////////////////////////////////////////////////
+// Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+////////////////////////////////////////////////////////////////////////////////
+//   ____  ____ 
+//  /   /\/   / 
+// /___/  \  /    Vendor: Xilinx 
+// \   \   \/     Version : 14.7
+//  \   \         Application : sch2hdl
+//  /   /         Filename : Two_to_Four_Decoder.vf
+// /___/   /\     Timestamp : 11/16/2022 18:32:30
+// \   \  /  \ 
+//  \___\/\___\ 
+//
+//Command: sch2hdl -intstyle ise -family spartan6 -verilog E:/Projects/Xilinx/DigitalDesign_3rd_Year/Two_to_Four_Decoder.vf -w E:/Projects/Xilinx/DigitalDesign_3rd_Year/Two_to_Four_Decoder.sch
+//Design Name: Two_to_Four_Decoder
+//Device: spartan6
+//Purpose:
+//    This verilog netlist is translated from an ECS schematic.It can be 
+//    synthesized and simulated, but it should not be modified. 
+//
+`timescale 1ns / 1ps
+
+module Two_to_Four_Decoder(A, 
+                           B, 
+                           ENABLE, 
+                           RESET, 
+                           D0, 
+                           D1, 
+                           D2, 
+                           D3);
+
+    input A;
+    input B;
+    input ENABLE;
+    input RESET;
+   output D0;
+   output D1;
+   output D2;
+   output D3;
+   
+   wire XLXN_58;
+   wire XLXN_59;
+   
+   INV  XLXI_2 (.I(A), 
+               .O(XLXN_59));
+   INV  XLXI_3 (.I(B), 
+               .O(XLXN_58));
+   AND4  XLXI_20 (.I0(XLXN_59), 
+                 .I1(XLXN_58), 
+                 .I2(RESET), 
+                 .I3(ENABLE), 
+                 .O(D0));
+   AND4  XLXI_21 (.I0(XLXN_59), 
+                 .I1(B), 
+                 .I2(RESET), 
+                 .I3(ENABLE), 
+                 .O(D1));
+   AND4  XLXI_22 (.I0(A), 
+                 .I1(XLXN_58), 
+                 .I2(RESET), 
+                 .I3(ENABLE), 
+                 .O(D2));
+   AND4  XLXI_23 (.I0(B), 
+                 .I1(A), 
+                 .I2(RESET), 
+                 .I3(ENABLE), 
+                 .O(D3));
+endmodule

@@ -1,0 +1,11 @@
+MODULE Subtracter_Calculator
+	SUBMODULE Eight_Bit_Twos_Complement
+		INSTANCE XLXI_28
+	SUBMODULE Eight_Bit_Twos_Complement
+		INSTANCE XLXI_29
+	SUBMODULE Two_to_One_MUX_Eight_Bit
+		INSTANCE XLXI_30
+	SUBMODULE Two_to_One_MUX_Eight_Bit
+		INSTANCE XLXI_31
+	SUBMODULE Eight_Bit_Subtractor
+		INSTANCE XLXI_32

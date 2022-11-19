@@ -1,0 +1,9 @@
+MODULE Subtracter_4_Bit
+	SUBMODULE Full_Subtracter
+		INSTANCE XLXI_2
+	SUBMODULE Full_Subtracter
+		INSTANCE XLXI_3
+	SUBMODULE Full_Subtracter
+		INSTANCE XLXI_4
+	SUBMODULE Full_Subtracter
+		INSTANCE XLXI_5

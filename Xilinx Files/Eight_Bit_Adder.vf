@@ -1,0 +1,152 @@
+////////////////////////////////////////////////////////////////////////////////
+// Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+////////////////////////////////////////////////////////////////////////////////
+//   ____  ____ 
+//  /   /\/   / 
+// /___/  \  /    Vendor: Xilinx 
+// \   \   \/     Version : 14.7
+//  \   \         Application : sch2hdl
+//  /   /         Filename : Eight_Bit_Adder.vf
+// /___/   /\     Timestamp : 11/16/2022 18:32:32
+// \   \  /  \ 
+//  \___\/\___\ 
+//
+//Command: sch2hdl -intstyle ise -family spartan6 -verilog E:/Projects/Xilinx/DigitalDesign_3rd_Year/Eight_Bit_Adder.vf -w E:/Projects/Xilinx/DigitalDesign_3rd_Year/Eight_Bit_Adder.sch
+//Design Name: Eight_Bit_Adder
+//Device: spartan6
+//Purpose:
+//    This verilog netlist is translated from an ECS schematic.It can be 
+//    synthesized and simulated, but it should not be modified. 
+//
+`timescale 1ns / 1ps
+
+module Half_Adder_MUSER_Eight_Bit_Adder(A, 
+                                        B, 
+                                        RST, 
+                                        CARRY, 
+                                        SUM);
+
+    input A;
+    input B;
+    input RST;
+   output CARRY;
+   output SUM;
+   
+   wire XLXN_1;
+   wire XLXN_2;
+   
+   XOR2  XLXI_1 (.I0(B), 
+                .I1(A), 
+                .O(XLXN_1));
+   AND2  XLXI_3 (.I0(B), 
+                .I1(A), 
+                .O(XLXN_2));
+   AND2  XLXI_4 (.I0(RST), 
+                .I1(XLXN_1), 
+                .O(SUM));
+   AND2  XLXI_5 (.I0(RST), 
+                .I1(XLXN_2), 
+                .O(CARRY));
+endmodule
+`timescale 1ns / 1ps
+
+module Full_Adder_MUSER_Eight_Bit_Adder(A, 
+                                        B, 
+                                        Cin, 
+                                        RST, 
+                                        CARRY, 
+                                        SUM);
+
+    input A;
+    input B;
+    input Cin;
+    input RST;
+   output CARRY;
+   output SUM;
+   
+   wire XLXN_1;
+   wire XLXN_2;
+   wire XLXN_3;
+   
+   Half_Adder_MUSER_Eight_Bit_Adder  XLXI_1 (.A(A), 
+                                            .B(B), 
+                                            .RST(RST), 
+                                            .CARRY(XLXN_3), 
+                                            .SUM(XLXN_1));
+   Half_Adder_MUSER_Eight_Bit_Adder  XLXI_2 (.A(XLXN_1), 
+                                            .B(Cin), 
+                                            .RST(RST), 
+                                            .CARRY(XLXN_2), 
+                                            .SUM(SUM));
+   OR2  XLXI_3 (.I0(XLXN_3), 
+               .I1(XLXN_2), 
+               .O(CARRY));
+endmodule
+`timescale 1ns / 1ps
+
+module Eight_Bit_Adder(A, 
+                       B, 
+                       RESET, 
+                       SUM);
+
+    input [7:0] A;
+    input [7:0] B;
+    input RESET;
+   output [7:0] SUM;
+   
+   wire XLXN_2;
+   wire XLXN_4;
+   wire XLXN_6;
+   wire XLXN_8;
+   wire XLXN_10;
+   wire XLXN_12;
+   wire XLXN_14;
+   
+   Half_Adder_MUSER_Eight_Bit_Adder  XLXI_1 (.A(A[0]), 
+                                            .B(B[0]), 
+                                            .RST(RESET), 
+                                            .CARRY(XLXN_2), 
+                                            .SUM(SUM[0]));
+   Full_Adder_MUSER_Eight_Bit_Adder  XLXI_2 (.A(A[1]), 
+                                            .B(B[1]), 
+                                            .Cin(XLXN_2), 
+                                            .RST(RESET), 
+                                            .CARRY(XLXN_4), 
+                                            .SUM(SUM[1]));
+   Full_Adder_MUSER_Eight_Bit_Adder  XLXI_3 (.A(A[2]), 
+                                            .B(B[2]), 
+                                            .Cin(XLXN_4), 
+                                            .RST(RESET), 
+                                            .CARRY(XLXN_6), 
+                                            .SUM(SUM[2]));
+   Full_Adder_MUSER_Eight_Bit_Adder  XLXI_4 (.A(A[3]), 
+                                            .B(B[3]), 
+                                            .Cin(XLXN_6), 
+                                            .RST(RESET), 
+                                            .CARRY(XLXN_10), 
+                                            .SUM(SUM[3]));
+   Full_Adder_MUSER_Eight_Bit_Adder  XLXI_5 (.A(A[4]), 
+                                            .B(B[4]), 
+                                            .Cin(XLXN_10), 
+                                            .RST(RESET), 
+                                            .CARRY(XLXN_8), 
+                                            .SUM(SUM[4]));
+   Full_Adder_MUSER_Eight_Bit_Adder  XLXI_6 (.A(A[5]), 
+                                            .B(B[5]), 
+                                            .Cin(XLXN_8), 
+                                            .RST(RESET), 
+                                            .CARRY(XLXN_12), 
+                                            .SUM(SUM[5]));
+   Full_Adder_MUSER_Eight_Bit_Adder  XLXI_7 (.A(A[6]), 
+                                            .B(B[6]), 
+                                            .Cin(XLXN_12), 
+                                            .RST(RESET), 
+                                            .CARRY(XLXN_14), 
+                                            .SUM(SUM[6]));
+   Full_Adder_MUSER_Eight_Bit_Adder  XLXI_8 (.A(A[7]), 
+                                            .B(B[7]), 
+                                            .Cin(XLXN_14), 
+                                            .RST(RESET), 
+                                            .CARRY(), 
+                                            .SUM(SUM[7]));
+endmodule

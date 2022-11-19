@@ -1,0 +1,5 @@
+MODULE Two_Bit_Twos_Complement
+	SUBMODULE Half_Adder
+		INSTANCE XLXI_1
+	SUBMODULE Half_Adder
+		INSTANCE XLXI_2

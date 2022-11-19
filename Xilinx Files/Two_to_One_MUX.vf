@@ -1,0 +1,54 @@
+////////////////////////////////////////////////////////////////////////////////
+// Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+////////////////////////////////////////////////////////////////////////////////
+//   ____  ____ 
+//  /   /\/   / 
+// /___/  \  /    Vendor: Xilinx 
+// \   \   \/     Version : 14.7
+//  \   \         Application : sch2hdl
+//  /   /         Filename : Two_to_One_MUX.vf
+// /___/   /\     Timestamp : 11/16/2022 18:02:59
+// \   \  /  \ 
+//  \___\/\___\ 
+//
+//Command: sch2hdl -intstyle ise -family spartan6 -verilog E:/Projects/Xilinx/DigitalDesign_3rd_Year/Two_to_One_MUX.vf -w E:/Projects/Xilinx/DigitalDesign_3rd_Year/Two_to_One_MUX.sch
+//Design Name: Two_to_One_MUX
+//Device: spartan6
+//Purpose:
+//    This verilog netlist is translated from an ECS schematic.It can be 
+//    synthesized and simulated, but it should not be modified. 
+//
+`timescale 1ns / 1ps
+
+module Two_to_One_MUX(I0, 
+                      I1, 
+                      RESET, 
+                      SEL, 
+                      OUTPUT);
+
+    input I0;
+    input I1;
+    input RESET;
+    input SEL;
+   output OUTPUT;
+   
+   wire XLXN_1;
+   wire XLXN_2;
+   wire XLXN_3;
+   wire XLXN_5;
+   
+   AND2  XLXI_1 (.I0(XLXN_5), 
+                .I1(I0), 
+                .O(XLXN_1));
+   AND2  XLXI_2 (.I0(I1), 
+                .I1(SEL), 
+                .O(XLXN_2));
+   INV  XLXI_3 (.I(SEL), 
+               .O(XLXN_5));
+   OR2  XLXI_4 (.I0(XLXN_2), 
+               .I1(XLXN_1), 
+               .O(XLXN_3));
+   AND2  XLXI_5 (.I0(RESET), 
+                .I1(XLXN_3), 
+                .O(OUTPUT));
+endmodule

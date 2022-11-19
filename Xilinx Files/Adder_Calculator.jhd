@@ -1,0 +1,11 @@
+MODULE Adder_Calculator
+	SUBMODULE Eight_Bit_Twos_Complement
+		INSTANCE XLXI_21
+	SUBMODULE Eight_Bit_Twos_Complement
+		INSTANCE XLXI_22
+	SUBMODULE Two_to_One_MUX_Eight_Bit
+		INSTANCE XLXI_28
+	SUBMODULE Two_to_One_MUX_Eight_Bit
+		INSTANCE XLXI_29
+	SUBMODULE Eight_Bit_Adder
+		INSTANCE XLXI_30

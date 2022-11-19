@@ -1,0 +1,99 @@
+////////////////////////////////////////////////////////////////////////////////
+// Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+////////////////////////////////////////////////////////////////////////////////
+//   ____  ____ 
+//  /   /\/   / 
+// /___/  \  /    Vendor: Xilinx 
+// \   \   \/     Version : 14.7
+//  \   \         Application : sch2hdl
+//  /   /         Filename : Two_to_One_MUX_Four_Bit.vf
+// /___/   /\     Timestamp : 11/17/2022 22:37:36
+// \   \  /  \ 
+//  \___\/\___\ 
+//
+//Command: sch2hdl -intstyle ise -family spartan6 -verilog E:/Projects/Xilinx/DigitalDesign_3rd_Year/Two_to_One_MUX_Four_Bit.vf -w E:/Projects/Xilinx/DigitalDesign_3rd_Year/Two_to_One_MUX_Four_Bit.sch
+//Design Name: Two_to_One_MUX_Four_Bit
+//Device: spartan6
+//Purpose:
+//    This verilog netlist is translated from an ECS schematic.It can be 
+//    synthesized and simulated, but it should not be modified. 
+//
+`timescale 1ns / 1ps
+
+module Two_to_One_MUX_Four_Bit(A, 
+                               B, 
+                               RESET, 
+                               SEL, 
+                               M_OUT);
+
+    input [3:0] A;
+    input [3:0] B;
+    input RESET;
+    input SEL;
+   output [3:0] M_OUT;
+   
+   wire XLXN_4;
+   wire XLXN_9;
+   wire XLXN_10;
+   wire XLXN_11;
+   wire XLXN_12;
+   wire XLXN_13;
+   wire XLXN_14;
+   wire XLXN_15;
+   wire XLXN_16;
+   wire XLXN_57;
+   wire XLXN_58;
+   wire XLXN_59;
+   wire XLXN_60;
+   
+   AND2  XLXI_6 (.I0(A[0]), 
+                .I1(XLXN_4), 
+                .O(XLXN_9));
+   AND2  XLXI_7 (.I0(B[0]), 
+                .I1(SEL), 
+                .O(XLXN_10));
+   AND2  XLXI_8 (.I0(A[1]), 
+                .I1(XLXN_4), 
+                .O(XLXN_11));
+   AND2  XLXI_9 (.I0(B[1]), 
+                .I1(SEL), 
+                .O(XLXN_12));
+   AND2  XLXI_10 (.I0(A[2]), 
+                 .I1(XLXN_4), 
+                 .O(XLXN_13));
+   AND2  XLXI_11 (.I0(B[2]), 
+                 .I1(SEL), 
+                 .O(XLXN_14));
+   AND2  XLXI_12 (.I0(A[3]), 
+                 .I1(XLXN_4), 
+                 .O(XLXN_15));
+   AND2  XLXI_13 (.I0(B[3]), 
+                 .I1(SEL), 
+                 .O(XLXN_16));
+   INV  XLXI_22 (.I(SEL), 
+                .O(XLXN_4));
+   OR2  XLXI_23 (.I0(XLXN_10), 
+                .I1(XLXN_9), 
+                .O(XLXN_57));
+   OR2  XLXI_24 (.I0(XLXN_12), 
+                .I1(XLXN_11), 
+                .O(XLXN_58));
+   OR2  XLXI_25 (.I0(XLXN_14), 
+                .I1(XLXN_13), 
+                .O(XLXN_59));
+   OR2  XLXI_26 (.I0(XLXN_16), 
+                .I1(XLXN_15), 
+                .O(XLXN_60));
+   AND2  XLXI_31 (.I0(RESET), 
+                 .I1(XLXN_57), 
+                 .O(M_OUT[0]));
+   AND2  XLXI_33 (.I0(RESET), 
+                 .I1(XLXN_58), 
+                 .O(M_OUT[1]));
+   AND2  XLXI_34 (.I0(RESET), 
+                 .I1(XLXN_59), 
+                 .O(M_OUT[2]));
+   AND2  XLXI_35 (.I0(RESET), 
+                 .I1(XLXN_60), 
+                 .O(M_OUT[3]));
+endmodule

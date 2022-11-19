@@ -1,0 +1,144 @@
+////////////////////////////////////////////////////////////////////////////////
+// Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+////////////////////////////////////////////////////////////////////////////////
+//   ____  ____ 
+//  /   /\/   / 
+// /___/  \  /    Vendor: Xilinx 
+// \   \   \/     Version : 14.7
+//  \   \         Application : sch2hdl
+//  /   /         Filename : Nine_Bit_Twos_Complement.vf
+// /___/   /\     Timestamp : 11/16/2022 18:32:32
+// \   \  /  \ 
+//  \___\/\___\ 
+//
+//Command: sch2hdl -intstyle ise -family spartan6 -verilog E:/Projects/Xilinx/DigitalDesign_3rd_Year/Nine_Bit_Twos_Complement.vf -w E:/Projects/Xilinx/DigitalDesign_3rd_Year/Nine_Bit_Twos_Complement.sch
+//Design Name: Nine_Bit_Twos_Complement
+//Device: spartan6
+//Purpose:
+//    This verilog netlist is translated from an ECS schematic.It can be 
+//    synthesized and simulated, but it should not be modified. 
+//
+`timescale 1ns / 1ps
+
+module Half_Adder_MUSER_Nine_Bit_Twos_Complement(A, 
+                                                 B, 
+                                                 RST, 
+                                                 CARRY, 
+                                                 SUM);
+
+    input A;
+    input B;
+    input RST;
+   output CARRY;
+   output SUM;
+   
+   wire XLXN_1;
+   wire XLXN_2;
+   
+   XOR2  XLXI_1 (.I0(B), 
+                .I1(A), 
+                .O(XLXN_1));
+   AND2  XLXI_3 (.I0(B), 
+                .I1(A), 
+                .O(XLXN_2));
+   AND2  XLXI_4 (.I0(RST), 
+                .I1(XLXN_1), 
+                .O(SUM));
+   AND2  XLXI_5 (.I0(RST), 
+                .I1(XLXN_2), 
+                .O(CARRY));
+endmodule
+`timescale 1ns / 1ps
+
+module Nine_Bit_Twos_Complement(A, 
+                                RESET, 
+                                OUTPUT);
+
+    input [8:0] A;
+    input RESET;
+   output [8:0] OUTPUT;
+   
+   wire XLXN_1;
+   wire XLXN_2;
+   wire XLXN_3;
+   wire XLXN_4;
+   wire XLXN_5;
+   wire XLXN_8;
+   wire XLXN_9;
+   wire XLXN_10;
+   wire XLXN_11;
+   wire XLXN_13;
+   wire XLXN_28;
+   wire XLXN_32;
+   wire XLXN_47;
+   wire XLXN_56;
+   wire XLXN_57;
+   wire XLXN_58;
+   wire XLXN_59;
+   wire XLXN_60;
+   
+   Half_Adder_MUSER_Nine_Bit_Twos_Complement  XLXI_1 (.A(XLXN_2), 
+                                                     .B(XLXN_1), 
+                                                     .RST(RESET), 
+                                                     .CARRY(XLXN_8), 
+                                                     .SUM(OUTPUT[0]));
+   Half_Adder_MUSER_Nine_Bit_Twos_Complement  XLXI_2 (.A(XLXN_3), 
+                                                     .B(XLXN_8), 
+                                                     .RST(RESET), 
+                                                     .CARRY(XLXN_9), 
+                                                     .SUM(OUTPUT[1]));
+   Half_Adder_MUSER_Nine_Bit_Twos_Complement  XLXI_3 (.A(XLXN_4), 
+                                                     .B(XLXN_9), 
+                                                     .RST(RESET), 
+                                                     .CARRY(XLXN_10), 
+                                                     .SUM(OUTPUT[2]));
+   Half_Adder_MUSER_Nine_Bit_Twos_Complement  XLXI_4 (.A(XLXN_5), 
+                                                     .B(XLXN_10), 
+                                                     .RST(RESET), 
+                                                     .CARRY(XLXN_11), 
+                                                     .SUM(OUTPUT[3]));
+   Half_Adder_MUSER_Nine_Bit_Twos_Complement  XLXI_5 (.A(XLXN_60), 
+                                                     .B(XLXN_11), 
+                                                     .RST(RESET), 
+                                                     .CARRY(XLXN_28), 
+                                                     .SUM(OUTPUT[4]));
+   Half_Adder_MUSER_Nine_Bit_Twos_Complement  XLXI_6 (.A(XLXN_59), 
+                                                     .B(XLXN_28), 
+                                                     .RST(RESET), 
+                                                     .CARRY(XLXN_13), 
+                                                     .SUM(OUTPUT[5]));
+   Half_Adder_MUSER_Nine_Bit_Twos_Complement  XLXI_7 (.A(XLXN_58), 
+                                                     .B(XLXN_13), 
+                                                     .RST(RESET), 
+                                                     .CARRY(XLXN_32), 
+                                                     .SUM(OUTPUT[6]));
+   Half_Adder_MUSER_Nine_Bit_Twos_Complement  XLXI_8 (.A(XLXN_57), 
+                                                     .B(XLXN_32), 
+                                                     .RST(RESET), 
+                                                     .CARRY(XLXN_47), 
+                                                     .SUM(OUTPUT[7]));
+   VCC  XLXI_9 (.P(XLXN_1));
+   INV  XLXI_10 (.I(A[0]), 
+                .O(XLXN_2));
+   INV  XLXI_11 (.I(A[1]), 
+                .O(XLXN_3));
+   INV  XLXI_12 (.I(A[2]), 
+                .O(XLXN_4));
+   INV  XLXI_13 (.I(A[3]), 
+                .O(XLXN_5));
+   Half_Adder_MUSER_Nine_Bit_Twos_Complement  XLXI_24 (.A(XLXN_56), 
+                                                      .B(XLXN_47), 
+                                                      .RST(RESET), 
+                                                      .CARRY(), 
+                                                      .SUM(OUTPUT[8]));
+   INV  XLXI_25 (.I(A[4]), 
+                .O(XLXN_60));
+   INV  XLXI_26 (.I(A[5]), 
+                .O(XLXN_59));
+   INV  XLXI_27 (.I(A[6]), 
+                .O(XLXN_58));
+   INV  XLXI_28 (.I(A[7]), 
+                .O(XLXN_57));
+   INV  XLXI_29 (.I(A[8]), 
+                .O(XLXN_56));
+endmodule

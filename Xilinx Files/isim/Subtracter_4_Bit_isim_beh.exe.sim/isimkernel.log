@@ -1,0 +1,28 @@
+Command line:
+   Subtracter_4_Bit_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  58786
+
+Thu Nov 17 22:23:40 2022
+
+
+ Elaboration Time: 0.03125 sec
+
+ Current Memory Usage: 5150.26 Meg
+
+ Total Signals          : 384
+ Total Nets             : 99
+ Total Signal Drivers   : 82
+ Total Blocks           : 91
+ Total Primitive Blocks : 78
+ Total Processes        : 83
+ Total Traceable Variables  : 18
+ Total Scalar Nets and Variables : 179
+
+ Total Simulation Time: 0.0625 sec
+
+ Current Memory Usage: 5150.26 Meg
+
+Thu Nov 17 22:23:41 2022
+

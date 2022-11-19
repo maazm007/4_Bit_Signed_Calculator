@@ -1,0 +1,29 @@
+Command line:
+   Nine_Bit_OR_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  50628
+
+Wed Nov 16 18:28:32 2022
+
+
+ Elaboration Time: 0.015625 sec
+
+ Current Memory Usage: 5150.36 Meg
+
+ Total Signals          : 53
+ Total Nets             : 46
+ Total Signal Drivers   : 14
+ Total Blocks           : 11
+ Total Primitive Blocks : 10
+ Total Processes        : 15
+ Total Traceable Variables  : 18
+ Total Scalar Nets and Variables : 126
+Total Line Count : 14
+
+ Total Simulation Time: 0.03125 sec
+
+ Current Memory Usage: 5150.36 Meg
+
+Wed Nov 16 18:28:37 2022
+

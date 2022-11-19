@@ -1,0 +1,144 @@
+////////////////////////////////////////////////////////////////////////////////
+// Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+////////////////////////////////////////////////////////////////////////////////
+//   ____  ____ 
+//  /   /\/   / 
+// /___/  \  /    Vendor: Xilinx 
+// \   \   \/     Version : 14.7
+//  \   \         Application : sch2hdl
+//  /   /         Filename : Adder_4_Bit.vf
+// /___/   /\     Timestamp : 11/16/2022 18:02:59
+// \   \  /  \ 
+//  \___\/\___\ 
+//
+//Command: sch2hdl -intstyle ise -family spartan6 -verilog E:/Projects/Xilinx/DigitalDesign_3rd_Year/Adder_4_Bit.vf -w E:/Projects/Xilinx/DigitalDesign_3rd_Year/Adder_4_Bit.sch
+//Design Name: Adder_4_Bit
+//Device: spartan6
+//Purpose:
+//    This verilog netlist is translated from an ECS schematic.It can be 
+//    synthesized and simulated, but it should not be modified. 
+//
+`timescale 1ns / 1ps
+
+module Half_Adder_MUSER_Adder_4_Bit(A, 
+                                    B, 
+                                    RST, 
+                                    CARRY, 
+                                    SUM);
+
+    input A;
+    input B;
+    input RST;
+   output CARRY;
+   output SUM;
+   
+   wire XLXN_1;
+   wire XLXN_2;
+   
+   XOR2  XLXI_1 (.I0(B), 
+                .I1(A), 
+                .O(XLXN_1));
+   AND2  XLXI_3 (.I0(B), 
+                .I1(A), 
+                .O(XLXN_2));
+   AND2  XLXI_4 (.I0(RST), 
+                .I1(XLXN_1), 
+                .O(SUM));
+   AND2  XLXI_5 (.I0(RST), 
+                .I1(XLXN_2), 
+                .O(CARRY));
+endmodule
+`timescale 1ns / 1ps
+
+module Full_Adder_MUSER_Adder_4_Bit(A, 
+                                    B, 
+                                    Cin, 
+                                    RST, 
+                                    CARRY, 
+                                    SUM);
+
+    input A;
+    input B;
+    input Cin;
+    input RST;
+   output CARRY;
+   output SUM;
+   
+   wire XLXN_1;
+   wire XLXN_2;
+   wire XLXN_3;
+   
+   Half_Adder_MUSER_Adder_4_Bit  XLXI_1 (.A(A), 
+                                        .B(B), 
+                                        .RST(RST), 
+                                        .CARRY(XLXN_3), 
+                                        .SUM(XLXN_1));
+   Half_Adder_MUSER_Adder_4_Bit  XLXI_2 (.A(XLXN_1), 
+                                        .B(Cin), 
+                                        .RST(RST), 
+                                        .CARRY(XLXN_2), 
+                                        .SUM(SUM));
+   OR2  XLXI_3 (.I0(XLXN_3), 
+               .I1(XLXN_2), 
+               .O(CARRY));
+endmodule
+`timescale 1ns / 1ps
+
+module Adder_4_Bit(A0, 
+                   A1, 
+                   A2, 
+                   A3, 
+                   B0, 
+                   B1, 
+                   B2, 
+                   B3, 
+                   RST, 
+                   SUM0, 
+                   SUM1, 
+                   SUM2, 
+                   SUM3, 
+                   SUM4);
+
+    input A0;
+    input A1;
+    input A2;
+    input A3;
+    input B0;
+    input B1;
+    input B2;
+    input B3;
+    input RST;
+   output SUM0;
+   output SUM1;
+   output SUM2;
+   output SUM3;
+   output SUM4;
+   
+   wire XLXN_3;
+   wire XLXN_4;
+   wire XLXN_6;
+   
+   Half_Adder_MUSER_Adder_4_Bit  XLXI_1 (.A(A0), 
+                                        .B(B0), 
+                                        .RST(RST), 
+                                        .CARRY(XLXN_6), 
+                                        .SUM(SUM0));
+   Full_Adder_MUSER_Adder_4_Bit  XLXI_2 (.A(A1), 
+                                        .B(B1), 
+                                        .Cin(XLXN_6), 
+                                        .RST(RST), 
+                                        .CARRY(XLXN_3), 
+                                        .SUM(SUM1));
+   Full_Adder_MUSER_Adder_4_Bit  XLXI_3 (.A(A2), 
+                                        .B(B2), 
+                                        .Cin(XLXN_3), 
+                                        .RST(RST), 
+                                        .CARRY(XLXN_4), 
+                                        .SUM(SUM2));
+   Full_Adder_MUSER_Adder_4_Bit  XLXI_4 (.A(A3), 
+                                        .B(B3), 
+                                        .Cin(XLXN_4), 
+                                        .RST(RST), 
+                                        .CARRY(SUM4), 
+                                        .SUM(SUM3));
+endmodule

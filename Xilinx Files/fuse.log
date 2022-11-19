@@ -1,0 +1,76 @@
+Running: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -lib unisims_ver -lib unimacro_ver -lib xilinxcorelib_ver -lib secureip -o E:/Projects/Xilinx/DigitalDesign_3rd_Year/Calculator_isim_beh.exe -prj E:/Projects/Xilinx/DigitalDesign_3rd_Year/Calculator_beh.prj work.Calculator work.glbl 
+ISim P.20131013 (signature 0x7708f090)
+Number of CPUs detected in this system: 4
+Turning on mult-threading, number of parallel sub-compilation jobs: 8 
+Determining compilation order of HDL files
+Analyzing Verilog file "E:/Projects/Xilinx/DigitalDesign_3rd_Year/Half_Adder.vf" into library work
+Analyzing Verilog file "E:/Projects/Xilinx/DigitalDesign_3rd_Year/HS.vf" into library work
+Analyzing Verilog file "E:/Projects/Xilinx/DigitalDesign_3rd_Year/Full_Adder.vf" into library work
+Analyzing Verilog file "E:/Projects/Xilinx/DigitalDesign_3rd_Year/Two_to_One_MUX.vf" into library work
+Analyzing Verilog file "E:/Projects/Xilinx/DigitalDesign_3rd_Year/Twos_Complement.vf" into library work
+Analyzing Verilog file "E:/Projects/Xilinx/DigitalDesign_3rd_Year/Full_Subtracter.vf" into library work
+Analyzing Verilog file "E:/Projects/Xilinx/DigitalDesign_3rd_Year/Adder_4_Bit.vf" into library work
+Analyzing Verilog file "E:/Projects/Xilinx/DigitalDesign_3rd_Year/Two_to_One_MUX_Nine_Bit.vf" into library work
+Analyzing Verilog file "E:/Projects/Xilinx/DigitalDesign_3rd_Year/Two_to_One_MUX_Four_Bit.vf" into library work
+Analyzing Verilog file "E:/Projects/Xilinx/DigitalDesign_3rd_Year/Two_to_One_MUX_Eight_Bit.vf" into library work
+Analyzing Verilog file "E:/Projects/Xilinx/DigitalDesign_3rd_Year/Two_One_MUX_Eight_Bit_All_Ports.vf" into library work
+Analyzing Verilog file "E:/Projects/Xilinx/DigitalDesign_3rd_Year/Subtracter_4_Bit.vf" into library work
+Analyzing Verilog file "E:/Projects/Xilinx/DigitalDesign_3rd_Year/Nine_Bit_Twos_Complement.vf" into library work
+Analyzing Verilog file "E:/Projects/Xilinx/DigitalDesign_3rd_Year/Multiplier_4_Bit.vf" into library work
+Analyzing Verilog file "E:/Projects/Xilinx/DigitalDesign_3rd_Year/Four_Bit_Divider.vf" into library work
+Analyzing Verilog file "E:/Projects/Xilinx/DigitalDesign_3rd_Year/Eight_Bit_Twos_Complement.vf" into library work
+Analyzing Verilog file "E:/Projects/Xilinx/DigitalDesign_3rd_Year/Eight_Bit_Subtractor.vf" into library work
+Analyzing Verilog file "E:/Projects/Xilinx/DigitalDesign_3rd_Year/Eight_Bit_Adder.vf" into library work
+Analyzing Verilog file "E:/Projects/Xilinx/DigitalDesign_3rd_Year/Two_to_Four_Decoder.vf" into library work
+Analyzing Verilog file "E:/Projects/Xilinx/DigitalDesign_3rd_Year/Subtracter_Calculator.vf" into library work
+Analyzing Verilog file "E:/Projects/Xilinx/DigitalDesign_3rd_Year/Nine_Bit_OR.vf" into library work
+Analyzing Verilog file "E:/Projects/Xilinx/DigitalDesign_3rd_Year/Multiplier_Calculator.vf" into library work
+Analyzing Verilog file "E:/Projects/Xilinx/DigitalDesign_3rd_Year/Divider_Calculator.vf" into library work
+Analyzing Verilog file "E:/Projects/Xilinx/DigitalDesign_3rd_Year/Adder_Calculator.vf" into library work
+Analyzing Verilog file "E:/Projects/Xilinx/DigitalDesign_3rd_Year/Calculator.vf" into library work
+Analyzing Verilog file "E:/Projects/Xilinx/DigitalDesign_3rd_Year/PRACTICE.vf" into library work
+Analyzing Verilog file "C:/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v" into library work
+Starting static elaboration
+Completed static elaboration
+Compiling module INV
+Compiling module AND4
+Compiling module Two_to_Four_Decoder_MUSER_Calcul...
+Compiling module XOR2
+Compiling module AND2
+Compiling module Half_Adder_MUSER_Calculator
+Compiling module OR2
+Compiling module Full_Adder_MUSER_Calculator
+Compiling module Adder_4_Bit_MUSER_Calculator
+Compiling module GND
+Compiling module AND3
+Compiling module Multiplier_4_Bit_MUSER_Calculato...
+Compiling module VCC
+Compiling module Nine_Bit_Twos_Complement_MUSER_C...
+Compiling module Two_to_One_MUX_Nine_Bit_MUSER_Ca...
+Compiling module Multiplier_Calculator_MUSER_Calc...
+Compiling module Eight_Bit_Twos_Complement_MUSER_...
+Compiling module Two_to_One_MUX_Eight_Bit_MUSER_C...
+Compiling module Eight_Bit_Adder_MUSER_Calculator
+Compiling module Adder_Calculator_MUSER_Calculato...
+Compiling module HS_MUSER_Calculator
+Compiling module Full_Subtracter_MUSER_Calculator
+Compiling module Eight_Bit_Subtractor_MUSER_Calcu...
+Compiling module Subtracter_Calculator_MUSER_Calc...
+Compiling module OR3
+Compiling module Nine_Bit_OR_MUSER_Calculator
+Compiling module Twos_Complement_MUSER_Calculator
+Compiling module Two_to_One_MUX_MUSER_Calculator
+Compiling module Four_Bit_Divider_MUSER_Calculato...
+Compiling module Subtracter_4_Bit_MUSER_Calculato...
+Compiling module OR4
+Compiling module Two_One_MUX_Eight_Bit_All_Ports_...
+Compiling module Two_to_One_MUX_Four_Bit_MUSER_Ca...
+Compiling module Divider_Calculator_MUSER_Calcula...
+Compiling module Calculator
+Compiling module glbl
+Time Resolution for simulation is 1ps.
+Waiting for 29 sub-compilation(s) to finish...
+Compiled 36 Verilog Units
+Built simulation executable E:/Projects/Xilinx/DigitalDesign_3rd_Year/Calculator_isim_beh.exe
+Fuse Memory Usage: 29500 KB
+Fuse CPU Usage: 718 ms

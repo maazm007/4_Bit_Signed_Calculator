@@ -1,0 +1,29 @@
+Command line:
+   Four_Bit_Divider_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  50574
+
+Wed Nov 16 18:03:11 2022
+
+
+ Elaboration Time: 0.03125 sec
+
+ Current Memory Usage: 5154.49 Meg
+
+ Total Signals          : 1198
+ Total Nets             : 246
+ Total Signal Drivers   : 222
+ Total Blocks           : 280
+ Total Primitive Blocks : 217
+ Total Processes        : 223
+ Total Traceable Variables  : 18
+ Total Scalar Nets and Variables : 326
+Total Line Count : 22
+
+ Total Simulation Time: 0.0625 sec
+
+ Current Memory Usage: 5154.49 Meg
+
+Wed Nov 16 18:03:16 2022
+

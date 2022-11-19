@@ -1,0 +1,417 @@
+////////////////////////////////////////////////////////////////////////////////
+// Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+////////////////////////////////////////////////////////////////////////////////
+//   ____  ____ 
+//  /   /\/   / 
+// /___/  \  /    Vendor: Xilinx 
+// \   \   \/     Version : 14.7
+//  \   \         Application : sch2hdl
+//  /   /         Filename : Four_Bit_Divider.vf
+// /___/   /\     Timestamp : 11/16/2022 18:11:22
+// \   \  /  \ 
+//  \___\/\___\ 
+//
+//Command: sch2hdl -intstyle ise -family spartan6 -verilog E:/Projects/Xilinx/DigitalDesign_3rd_Year/Four_Bit_Divider.vf -w E:/Projects/Xilinx/DigitalDesign_3rd_Year/Four_Bit_Divider.sch
+//Design Name: Four_Bit_Divider
+//Device: spartan6
+//Purpose:
+//    This verilog netlist is translated from an ECS schematic.It can be 
+//    synthesized and simulated, but it should not be modified. 
+//
+`timescale 1ns / 1ps
+
+module Two_to_One_MUX_MUSER_Four_Bit_Divider(I0, 
+                                             I1, 
+                                             RESET, 
+                                             SEL, 
+                                             OUTPUT);
+
+    input I0;
+    input I1;
+    input RESET;
+    input SEL;
+   output OUTPUT;
+   
+   wire XLXN_1;
+   wire XLXN_2;
+   wire XLXN_3;
+   wire XLXN_5;
+   
+   AND2  XLXI_1 (.I0(XLXN_5), 
+                .I1(I0), 
+                .O(XLXN_1));
+   AND2  XLXI_2 (.I0(I1), 
+                .I1(SEL), 
+                .O(XLXN_2));
+   INV  XLXI_3 (.I(SEL), 
+               .O(XLXN_5));
+   OR2  XLXI_4 (.I0(XLXN_2), 
+               .I1(XLXN_1), 
+               .O(XLXN_3));
+   AND2  XLXI_5 (.I0(RESET), 
+                .I1(XLXN_3), 
+                .O(OUTPUT));
+endmodule
+`timescale 1ns / 1ps
+
+module Half_Adder_MUSER_Four_Bit_Divider(A, 
+                                         B, 
+                                         RST, 
+                                         CARRY, 
+                                         SUM);
+
+    input A;
+    input B;
+    input RST;
+   output CARRY;
+   output SUM;
+   
+   wire XLXN_1;
+   wire XLXN_2;
+   
+   XOR2  XLXI_1 (.I0(B), 
+                .I1(A), 
+                .O(XLXN_1));
+   AND2  XLXI_3 (.I0(B), 
+                .I1(A), 
+                .O(XLXN_2));
+   AND2  XLXI_4 (.I0(RST), 
+                .I1(XLXN_1), 
+                .O(SUM));
+   AND2  XLXI_5 (.I0(RST), 
+                .I1(XLXN_2), 
+                .O(CARRY));
+endmodule
+`timescale 1ns / 1ps
+
+module Full_Adder_MUSER_Four_Bit_Divider(A, 
+                                         B, 
+                                         Cin, 
+                                         RST, 
+                                         CARRY, 
+                                         SUM);
+
+    input A;
+    input B;
+    input Cin;
+    input RST;
+   output CARRY;
+   output SUM;
+   
+   wire XLXN_1;
+   wire XLXN_2;
+   wire XLXN_3;
+   
+   Half_Adder_MUSER_Four_Bit_Divider  XLXI_1 (.A(A), 
+                                             .B(B), 
+                                             .RST(RST), 
+                                             .CARRY(XLXN_3), 
+                                             .SUM(XLXN_1));
+   Half_Adder_MUSER_Four_Bit_Divider  XLXI_2 (.A(XLXN_1), 
+                                             .B(Cin), 
+                                             .RST(RST), 
+                                             .CARRY(XLXN_2), 
+                                             .SUM(SUM));
+   OR2  XLXI_3 (.I0(XLXN_3), 
+               .I1(XLXN_2), 
+               .O(CARRY));
+endmodule
+`timescale 1ns / 1ps
+
+module Adder_4_Bit_MUSER_Four_Bit_Divider(A0, 
+                                          A1, 
+                                          A2, 
+                                          A3, 
+                                          B0, 
+                                          B1, 
+                                          B2, 
+                                          B3, 
+                                          RST, 
+                                          SUM0, 
+                                          SUM1, 
+                                          SUM2, 
+                                          SUM3, 
+                                          SUM4);
+
+    input A0;
+    input A1;
+    input A2;
+    input A3;
+    input B0;
+    input B1;
+    input B2;
+    input B3;
+    input RST;
+   output SUM0;
+   output SUM1;
+   output SUM2;
+   output SUM3;
+   output SUM4;
+   
+   wire XLXN_3;
+   wire XLXN_4;
+   wire XLXN_6;
+   
+   Half_Adder_MUSER_Four_Bit_Divider  XLXI_1 (.A(A0), 
+                                             .B(B0), 
+                                             .RST(RST), 
+                                             .CARRY(XLXN_6), 
+                                             .SUM(SUM0));
+   Full_Adder_MUSER_Four_Bit_Divider  XLXI_2 (.A(A1), 
+                                             .B(B1), 
+                                             .Cin(XLXN_6), 
+                                             .RST(RST), 
+                                             .CARRY(XLXN_3), 
+                                             .SUM(SUM1));
+   Full_Adder_MUSER_Four_Bit_Divider  XLXI_3 (.A(A2), 
+                                             .B(B2), 
+                                             .Cin(XLXN_3), 
+                                             .RST(RST), 
+                                             .CARRY(XLXN_4), 
+                                             .SUM(SUM2));
+   Full_Adder_MUSER_Four_Bit_Divider  XLXI_4 (.A(A3), 
+                                             .B(B3), 
+                                             .Cin(XLXN_4), 
+                                             .RST(RST), 
+                                             .CARRY(SUM4), 
+                                             .SUM(SUM3));
+endmodule
+`timescale 1ns / 1ps
+
+module Twos_Complement_MUSER_Four_Bit_Divider(A0, 
+                                              A1, 
+                                              A2, 
+                                              A3, 
+                                              RST, 
+                                              C_OUT_1, 
+                                              C_OUT_2, 
+                                              C_OUT_3, 
+                                              C_OUT_4);
+
+    input A0;
+    input A1;
+    input A2;
+    input A3;
+    input RST;
+   output C_OUT_1;
+   output C_OUT_2;
+   output C_OUT_3;
+   output C_OUT_4;
+   
+   wire XLXN_12;
+   wire XLXN_13;
+   wire XLXN_14;
+   wire XLXN_15;
+   wire XLXN_23;
+   wire XLXN_24;
+   wire XLXN_25;
+   wire XLXN_30;
+   
+   Half_Adder_MUSER_Four_Bit_Divider  XLXI_1 (.A(XLXN_12), 
+                                             .B(XLXN_25), 
+                                             .RST(RST), 
+                                             .CARRY(), 
+                                             .SUM(C_OUT_4));
+   Half_Adder_MUSER_Four_Bit_Divider  XLXI_2 (.A(XLXN_13), 
+                                             .B(XLXN_24), 
+                                             .RST(RST), 
+                                             .CARRY(XLXN_25), 
+                                             .SUM(C_OUT_3));
+   Half_Adder_MUSER_Four_Bit_Divider  XLXI_3 (.A(XLXN_14), 
+                                             .B(XLXN_23), 
+                                             .RST(RST), 
+                                             .CARRY(XLXN_24), 
+                                             .SUM(C_OUT_2));
+   Half_Adder_MUSER_Four_Bit_Divider  XLXI_4 (.A(XLXN_15), 
+                                             .B(XLXN_30), 
+                                             .RST(RST), 
+                                             .CARRY(XLXN_23), 
+                                             .SUM(C_OUT_1));
+   INV  XLXI_17 (.I(A3), 
+                .O(XLXN_12));
+   INV  XLXI_18 (.I(A2), 
+                .O(XLXN_13));
+   INV  XLXI_19 (.I(A1), 
+                .O(XLXN_14));
+   INV  XLXI_20 (.I(A0), 
+                .O(XLXN_15));
+   VCC  XLXI_22 (.P(XLXN_30));
+endmodule
+`timescale 1ns / 1ps
+
+module Four_Bit_Divider(Dividend, 
+                        Divisor, 
+                        RESET, 
+                        QUOTIENT, 
+                        REMAINDER);
+
+    input [3:0] Dividend;
+    input [3:0] Divisor;
+    input RESET;
+   output [3:0] QUOTIENT;
+   output [3:0] REMAINDER;
+   
+   wire XLXN_17;
+   wire XLXN_25;
+   wire XLXN_28;
+   wire XLXN_29;
+   wire XLXN_31;
+   wire XLXN_42;
+   wire XLXN_44;
+   wire XLXN_45;
+   wire XLXN_46;
+   wire XLXN_48;
+   wire XLXN_49;
+   wire XLXN_58;
+   wire XLXN_60;
+   wire XLXN_61;
+   wire XLXN_62;
+   wire XLXN_63;
+   wire XLXN_64;
+   wire XLXN_73;
+   wire XLXN_74;
+   wire XLXN_75;
+   wire XLXN_76;
+   wire XLXN_78;
+   wire XLXN_79;
+   wire XLXN_81;
+   wire XLXN_82;
+   wire XLXN_83;
+   wire XLXN_95;
+   wire XLXN_96;
+   wire [3:0] QUOTIENT_DUMMY;
+   
+   assign QUOTIENT[3:0] = QUOTIENT_DUMMY[3:0];
+   Twos_Complement_MUSER_Four_Bit_Divider  XLXI_1 (.A0(Divisor[0]), 
+                                                  .A1(Divisor[1]), 
+                                                  .A2(Divisor[2]), 
+                                                  .A3(Divisor[3]), 
+                                                  .RST(RESET), 
+                                                  .C_OUT_1(XLXN_73), 
+                                                  .C_OUT_2(XLXN_74), 
+                                                  .C_OUT_3(XLXN_75), 
+                                                  .C_OUT_4(XLXN_76));
+   Adder_4_Bit_MUSER_Four_Bit_Divider  XLXI_2 (.A0(XLXN_73), 
+                                              .A1(XLXN_74), 
+                                              .A2(XLXN_75), 
+                                              .A3(XLXN_76), 
+                                              .B0(Dividend[3]), 
+                                              .B1(XLXN_17), 
+                                              .B2(XLXN_17), 
+                                              .B3(XLXN_17), 
+                                              .RST(RESET), 
+                                              .SUM0(XLXN_28), 
+                                              .SUM1(XLXN_29), 
+                                              .SUM2(XLXN_31), 
+                                              .SUM3(), 
+                                              .SUM4(QUOTIENT_DUMMY[3]));
+   GND  XLXI_3 (.G(XLXN_17));
+   Two_to_One_MUX_MUSER_Four_Bit_Divider  XLXI_4 (.I0(Dividend[3]), 
+                                                 .I1(XLXN_28), 
+                                                 .RESET(RESET), 
+                                                 .SEL(QUOTIENT_DUMMY[3]), 
+                                                 .OUTPUT(XLXN_44));
+   Two_to_One_MUX_MUSER_Four_Bit_Divider  XLXI_5 (.I0(XLXN_25), 
+                                                 .I1(XLXN_29), 
+                                                 .RESET(RESET), 
+                                                 .SEL(QUOTIENT_DUMMY[3]), 
+                                                 .OUTPUT(XLXN_45));
+   Two_to_One_MUX_MUSER_Four_Bit_Divider  XLXI_6 (.I0(XLXN_25), 
+                                                 .I1(XLXN_31), 
+                                                 .RESET(RESET), 
+                                                 .SEL(QUOTIENT_DUMMY[3]), 
+                                                 .OUTPUT(XLXN_42));
+   GND  XLXI_7 (.G(XLXN_25));
+   Adder_4_Bit_MUSER_Four_Bit_Divider  XLXI_8 (.A0(XLXN_73), 
+                                              .A1(XLXN_74), 
+                                              .A2(XLXN_75), 
+                                              .A3(XLXN_76), 
+                                              .B0(Dividend[2]), 
+                                              .B1(XLXN_44), 
+                                              .B2(XLXN_45), 
+                                              .B3(XLXN_42), 
+                                              .RST(RESET), 
+                                              .SUM0(XLXN_46), 
+                                              .SUM1(XLXN_48), 
+                                              .SUM2(XLXN_49), 
+                                              .SUM3(), 
+                                              .SUM4(QUOTIENT_DUMMY[2]));
+   Two_to_One_MUX_MUSER_Four_Bit_Divider  XLXI_9 (.I0(Dividend[2]), 
+                                                 .I1(XLXN_46), 
+                                                 .RESET(RESET), 
+                                                 .SEL(QUOTIENT_DUMMY[2]), 
+                                                 .OUTPUT(XLXN_60));
+   Two_to_One_MUX_MUSER_Four_Bit_Divider  XLXI_11 (.I0(XLXN_44), 
+                                                  .I1(XLXN_48), 
+                                                  .RESET(RESET), 
+                                                  .SEL(QUOTIENT_DUMMY[2]), 
+                                                  .OUTPUT(XLXN_61));
+   Two_to_One_MUX_MUSER_Four_Bit_Divider  XLXI_12 (.I0(XLXN_45), 
+                                                  .I1(XLXN_49), 
+                                                  .RESET(RESET), 
+                                                  .SEL(QUOTIENT_DUMMY[2]), 
+                                                  .OUTPUT(XLXN_58));
+   Adder_4_Bit_MUSER_Four_Bit_Divider  XLXI_13 (.A0(XLXN_73), 
+                                               .A1(XLXN_74), 
+                                               .A2(XLXN_75), 
+                                               .A3(XLXN_76), 
+                                               .B0(Dividend[1]), 
+                                               .B1(XLXN_60), 
+                                               .B2(XLXN_61), 
+                                               .B3(XLXN_58), 
+                                               .RST(RESET), 
+                                               .SUM0(XLXN_62), 
+                                               .SUM1(XLXN_63), 
+                                               .SUM2(XLXN_64), 
+                                               .SUM3(), 
+                                               .SUM4(QUOTIENT_DUMMY[1]));
+   Two_to_One_MUX_MUSER_Four_Bit_Divider  XLXI_14 (.I0(Dividend[1]), 
+                                                  .I1(XLXN_62), 
+                                                  .RESET(RESET), 
+                                                  .SEL(QUOTIENT_DUMMY[1]), 
+                                                  .OUTPUT(XLXN_78));
+   Two_to_One_MUX_MUSER_Four_Bit_Divider  XLXI_15 (.I0(XLXN_60), 
+                                                  .I1(XLXN_63), 
+                                                  .RESET(RESET), 
+                                                  .SEL(QUOTIENT_DUMMY[1]), 
+                                                  .OUTPUT(XLXN_79));
+   Two_to_One_MUX_MUSER_Four_Bit_Divider  XLXI_16 (.I0(XLXN_61), 
+                                                  .I1(XLXN_64), 
+                                                  .RESET(RESET), 
+                                                  .SEL(QUOTIENT_DUMMY[1]), 
+                                                  .OUTPUT(XLXN_95));
+   Adder_4_Bit_MUSER_Four_Bit_Divider  XLXI_17 (.A0(XLXN_73), 
+                                               .A1(XLXN_74), 
+                                               .A2(XLXN_75), 
+                                               .A3(XLXN_76), 
+                                               .B0(Dividend[0]), 
+                                               .B1(XLXN_78), 
+                                               .B2(XLXN_79), 
+                                               .B3(XLXN_95), 
+                                               .RST(RESET), 
+                                               .SUM0(XLXN_81), 
+                                               .SUM1(XLXN_82), 
+                                               .SUM2(XLXN_83), 
+                                               .SUM3(XLXN_96), 
+                                               .SUM4(QUOTIENT_DUMMY[0]));
+   Two_to_One_MUX_MUSER_Four_Bit_Divider  XLXI_18 (.I0(Dividend[0]), 
+                                                  .I1(XLXN_81), 
+                                                  .RESET(RESET), 
+                                                  .SEL(QUOTIENT_DUMMY[0]), 
+                                                  .OUTPUT(REMAINDER[0]));
+   Two_to_One_MUX_MUSER_Four_Bit_Divider  XLXI_19 (.I0(XLXN_78), 
+                                                  .I1(XLXN_82), 
+                                                  .RESET(RESET), 
+                                                  .SEL(QUOTIENT_DUMMY[0]), 
+                                                  .OUTPUT(REMAINDER[1]));
+   Two_to_One_MUX_MUSER_Four_Bit_Divider  XLXI_20 (.I0(XLXN_79), 
+                                                  .I1(XLXN_83), 
+                                                  .RESET(RESET), 
+                                                  .SEL(QUOTIENT_DUMMY[0]), 
+                                                  .OUTPUT(REMAINDER[2]));
+   Two_to_One_MUX_MUSER_Four_Bit_Divider  XLXI_21 (.I0(XLXN_95), 
+                                                  .I1(XLXN_96), 
+                                                  .RESET(RESET), 
+                                                  .SEL(QUOTIENT_DUMMY[0]), 
+                                                  .OUTPUT(REMAINDER[3]));
+endmodule
