@@ -6,17 +6,19 @@ Features of Calculator:
 2) Two inputs will be given of size 4-Bit each
 3) M0 and M1 pins are used to decide which one arithmetic operation out of four must be performed at a time, as,
 [M1, M0] = Operation
-    1) 00 = Addition
-    2) 01 = Subtraction
-    3) 10 = Multiplication
-    4) 11 = Division
 
+	- 00 = Addition
+	* 01 = Subtraction
+	* 10 = Multiplication
+	* 11 = Division
+	
 The signs of the input values are decided by two allotted pins as Sign_A and Sign_B as,
 [Sign_A, Sign_B] = Sign (for value 2), Sign (for value 1)
-    1. 00 = Positive, Positive
-    2. 01 = Positive, Negative
-    3. 10 = Negative, Positive
-    4. 11 = Negative, Negative
+    	
+	1) 00 = Positive, Positive
+	2) 01 = Positive, Negative
+    3) 10 = Negative, Positive
+    4) 11 = Negative, Negative
 
 
 <img width="524" alt="Signed Calculator" src="https://user-images.githubusercontent.com/83294849/202861380-a2257a35-b577-44ad-933a-89ae514fdffe.png">
