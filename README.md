@@ -13,10 +13,10 @@ Features of Calculator:
 
 The signs of the input values are decided by two allotted pins as Sign_A and Sign_B as,
 [Sign_A, Sign_B] = Sign (for value 2), Sign (for value 1)
-    1) 00 = Positive, Positive
-    2) 01 = Positive, Negative
-    3) 10 = Negative, Positive
-    4) 11 = Negative, Negative
+    1. 00 = Positive, Positive
+    2. 01 = Positive, Negative
+    3. 10 = Negative, Positive
+    4. 11 = Negative, Negative
 
 
 <img width="524" alt="Signed Calculator" src="https://user-images.githubusercontent.com/83294849/202861380-a2257a35-b577-44ad-933a-89ae514fdffe.png">
